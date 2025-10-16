@@ -1,8 +1,13 @@
 package com.hng.catapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class User {
 
-    private String name = "Adedayo Theophilus Adedeji";
-    private String email = "adedejitheophilus2018@gmail.com";
-    private String stack = "Java/Springboot";
+    private String name;
+    private String email;
+    private String stack;
 }
