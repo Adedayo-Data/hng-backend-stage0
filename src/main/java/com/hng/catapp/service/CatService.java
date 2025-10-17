@@ -16,7 +16,7 @@ public class CatService {
 
     public CatService(
             RestTemplate restTemplate,
-            @Value("${catfact-api-url}") String apiUrl
+            @Value("${CATFACT_API_URL}") String apiUrl
             ){
         this.restTemplate = restTemplate;
         this.apiUrl = apiUrl;
