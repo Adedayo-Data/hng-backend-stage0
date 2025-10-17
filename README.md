@@ -2,14 +2,14 @@
 A RESTful API built with Spring Boot that returns user profile information along with dynamic cat facts fetched from an external API.
 
 ## Live Demo
-<b>API Endpoint: https://your-deployed-url.com/me
+<b>API Endpoint: https://catapp-f6yc8mct.b4a.run/me
 
 ## Tech Stack
 - Language: Java 17
 - Framework: Spring Boot 3.5.6
 - Build Tool: Maven
 - External API: Cat Facts API
-- Deployment: Railway
+- Deployment: Back4All
 
 ## Getting Started
 ### Prerequisites
