@@ -13,7 +13,7 @@ import java.time.Duration;
 @Configuration
 public class AppConfig {
 
-    @Value("${catfact-api-timeout}")
+    @Value("${CATFACT_API_TIMEOUT}")
     private int timeoutSeconds;
 
     @Bean
