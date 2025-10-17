@@ -21,15 +21,28 @@ public class ProfileController {
     @GetMapping("/me")
     public ResponseEntity<MyProfile> getProfile(){
         MyProfile myProfile = new MyProfile();
-        User user = new User(
-                "Adedayo Theophilus Adedeji",
-                "adedejitheophilus2018@gmail.com",
-                "Java/Springboot");
+        try{
+            User user = new User(
+                    "Adedayo Theophilus Adedeji",
+                    "adedejitheophilus2018@gmail.com",
+                    "Java/Springboot");
 
-        myProfile.setUser(user);
-        myProfile.setStatus("success");
-        myProfile.setTimestamp(Instant.now());
-        myProfile.setFact(catService.getCatFacts().getFact());
+            myProfile.setUser(user);
+            myProfile.setStatus("success");
+            myProfile.setTimestamp(Instant.now());
+            myProfile.setFact(catService.fetchCatFact());
+        }catch(Exception e){
+            System.err.println("Error fetching cat data " + e.getMessage());
+            User user = new User(
+                    "Adedayo Theophilus Adedeji",
+                    "adedejitheophilus2018@gmail.com",
+                    "Java/Springboot");
+            myProfile.setUser(user);
+            myProfile.setStatus("success");
+            myProfile.setTimestamp(Instant.now());
+            myProfile.setFact("Unable to fetch cat facts at this time.");
+
+        }
 
         return ResponseEntity.status(HttpStatus.OK).body(myProfile);
     }
